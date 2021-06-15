@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PortalShader_pink
+  m_Shader: {fileID: -6465566751694194690, guid: a8ad07302c4937f4c91677fe56bc8520, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_B0D82195:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_2EC4AC73_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 34ccf2d254bf96a46aa1e03a945a48cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_483C8B64_Texture_1:
+        m_Texture: {fileID: 2800000, guid: ad4a2c5eb371bb04fbdef59cbea47bd7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_67110360_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 788c60442641e3441b404ae411f3925d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_161C136A: 2
+    - Vector1_A2BC9489: 30
+    - Vector1_BC07C430: 0.5
+    - Vector1_FC7FC618: 2.5
+    m_Colors:
+    - Color_E49B2C27: {r: 127.999985, g: 0, b: 102.53402, a: 0}
+  m_BuildTextureStacks: []
