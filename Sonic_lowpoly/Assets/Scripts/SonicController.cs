@@ -11,6 +11,7 @@ public class SonicController : MonoBehaviour
     //private bool roll;
     private bool isGrounded;
     private float horizontalInput;
+    private float verticalInput;
     public int forceConst = 10;
     public AudioSource jumpSound;
     public ParticleSystem smoke;
@@ -23,8 +24,8 @@ public class SonicController : MonoBehaviour
 
   
 
-    // public float rotation_Speed = 0.15f;
-    //  public float rotateDegreesPerSecond = 180f;
+     public float rotation_Speed = 0.15f;
+     public float rotateDegreesPerSecond = 180f;
 
 
     // Start is called before the first frame update
@@ -38,19 +39,23 @@ public class SonicController : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+        
        
 
         //Face Forward
 
-        transform.forward = new Vector3(-(Mathf.Abs(horizontalInput) * 1), 0, horizontalInput);
-       
+        transform.forward = new Vector3(-(Mathf.Abs(horizontalInput) * 0), 0, horizontalInput);
+        
+
         // transform.forward = new Vector3(-(Mathf.Abs(horizontalInput) - 1), 0, horizontalInput);
 
 
 
         // Move Animation
         _animator.SetFloat("Speed", horizontalInput);
-        
+        _animator.SetFloat("SpeedVertical", verticalInput);
+
 
         //Set Animator IsGrounded
         _animator.SetBool("IsGrounded", isGrounded);
@@ -64,21 +69,22 @@ public class SonicController : MonoBehaviour
 
         }
 
+              
        
-
-        /*
-        if (Input.GetButtonDown("Jump") && isGrounded)
+      /*  if (Input.GetButtonDown("Jump") && isGrounded)
          {
              jump = true;
-         } 
-        */
+         } */
+        
     }
+
+    
 
     private void FixedUpdate()
     {
         //Move        
         _rigidbody.velocity = new Vector3(-horizontalInput * speedMultiplier, _rigidbody.velocity.y, 0 * Time.deltaTime);
-       
+        _rigidbody.velocity = new Vector3(-horizontalInput * speedMultiplier, _rigidbody.velocity.y, 0 * Time.deltaTime);
 
         //IsGrounded
 
