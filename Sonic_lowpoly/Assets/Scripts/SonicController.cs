@@ -24,8 +24,8 @@ public class SonicController : MonoBehaviour
 
   
 
-     public float rotation_Speed = 0.15f;
-     public float rotateDegreesPerSecond = 180f;
+    // public float rotation_Speed = 0.15f;
+    // public float rotateDegreesPerSecond = 180f;
 
 
     // Start is called before the first frame update
@@ -84,7 +84,7 @@ public class SonicController : MonoBehaviour
     {
         //Move        
         _rigidbody.velocity = new Vector3(-horizontalInput * speedMultiplier, _rigidbody.velocity.y, 0 * Time.deltaTime);
-        _rigidbody.velocity = new Vector3(-horizontalInput * speedMultiplier, _rigidbody.velocity.y, 0 * Time.deltaTime);
+        
 
         //IsGrounded
 

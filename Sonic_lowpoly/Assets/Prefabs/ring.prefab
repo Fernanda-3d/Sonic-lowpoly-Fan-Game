@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb0fb0133318024a861314ba6cabfa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateVector: {x: 0, y: 180, z: 0}
+  rotateVector: {x: 0, y: -180, z: 0}
 --- !u!65 &6629502055474411650
 BoxCollider:
   m_ObjectHideFlags: 0
