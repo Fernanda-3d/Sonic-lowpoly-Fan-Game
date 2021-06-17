@@ -10,8 +10,9 @@ public class InstantiateRing : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-      
-        Instantiate(ring1, transform.position, transform.rotation);
+        if (other.gameObject.tag == "Player")
+
+            Instantiate(ring1, transform.position, transform.rotation);
       
               
 

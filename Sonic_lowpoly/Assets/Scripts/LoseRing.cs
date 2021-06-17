@@ -10,7 +10,10 @@ public class LoseRing : MonoBehaviour
       
 
     void OnTriggerEnter(Collider other)
+
         {
+        if (other.gameObject.tag == "Player")
+
         loseSound.PlayOneShot(losering);
         ringEffect.Play();
         ScoringSystem.theScore = 0;

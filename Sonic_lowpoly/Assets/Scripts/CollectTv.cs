@@ -11,6 +11,8 @@ public class CollectTv : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Player")
+
         collectSound.PlayOneShot(ringSound);
         star.Play();
         ScoringSystem.theScore += 10;
