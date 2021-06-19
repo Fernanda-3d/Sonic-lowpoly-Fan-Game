@@ -12,7 +12,7 @@ public class LoseRing : MonoBehaviour
     void OnTriggerEnter(Collider other)
 
         {
-        if (other.gameObject.tag == "Player")
+       if (other.gameObject.tag == "kill_trigger")
 
         loseSound.PlayOneShot(losering);
         ringEffect.Play();

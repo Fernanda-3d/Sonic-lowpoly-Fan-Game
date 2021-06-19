@@ -11,7 +11,7 @@ public class SonicController : MonoBehaviour
     //private bool roll;
     private bool isGrounded;
     private float horizontalInput;
-    private float verticalInput;
+    //private float verticalInput;
     public int forceConst = 10;
     public AudioSource jumpSound;
     public ParticleSystem smoke;
@@ -21,8 +21,11 @@ public class SonicController : MonoBehaviour
     public AudioClip hitSound;
     public AudioSource finishSound;
     public AudioClip finish;
+    public AudioSource loseSound;
+    public AudioClip losering;
+    public ParticleSystem ringEffect;
 
-  
+
 
     // public float rotation_Speed = 0.15f;
     // public float rotateDegreesPerSecond = 180f;
@@ -39,7 +42,7 @@ public class SonicController : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        //verticalInput = Input.GetAxis("Vertical");
         
        
 
@@ -54,7 +57,7 @@ public class SonicController : MonoBehaviour
 
         // Move Animation
         _animator.SetFloat("Speed", horizontalInput);
-        _animator.SetFloat("SpeedVertical", verticalInput);
+        //_animator.SetFloat("SpeedVertical", verticalInput);
 
 
         //Set Animator IsGrounded
@@ -65,6 +68,7 @@ public class SonicController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
         {
             jump = true;
+           // _rigidbody.velocity = Vector3.zero;
             jumpSound.Play();
 
         }
@@ -96,8 +100,6 @@ public class SonicController : MonoBehaviour
         {
             jump = false;
             _rigidbody.AddForce(0, forceConst, 0, ForceMode.Impulse);
-           
-
         }
 
         
@@ -127,6 +129,9 @@ public class SonicController : MonoBehaviour
         {
 
             Debug.Log("I'm killing the enemy");
+            loseSound.PlayOneShot(losering);
+            ringEffect.Play();
+            ScoringSystem.theScore = 0;
 
         }
 
