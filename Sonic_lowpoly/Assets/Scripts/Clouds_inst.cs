@@ -33,14 +33,14 @@ public class Clouds_inst : MonoBehaviour
       
         while (cloudCount < 150)
         {
-            xPos = Random.Range(15, -230);
-            yPos = Random.Range(10, 50);
-            zPos = Random.Range(-125, -175);
+            xPos = Random.Range(30, -260);
+            yPos = Random.Range(10, 40);
+            zPos = Random.Range(-125, -180);
             
 
-            xPos2 = Random.Range(10, -200);
-            yPos2 = Random.Range(20, 55);
-            zPos2 = Random.Range(-130, -150);
+            xPos2 = Random.Range(30, -230);
+            yPos2 = Random.Range(10, 35);
+            zPos2 = Random.Range(-130, -185);
 
            GameObject cloud_1 = Instantiate(cloud1, new Vector3(xPos, yPos, zPos), Quaternion.identity);
            GameObject cloud_2 = Instantiate(cloud2, new Vector3(xPos2, yPos2, zPos2), Quaternion.identity);
