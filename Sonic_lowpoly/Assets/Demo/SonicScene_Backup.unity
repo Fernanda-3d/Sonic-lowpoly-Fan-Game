@@ -2905,7 +2905,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 6.97, y: -165.25, z: 0}
 --- !u!1001 &121608426
 PrefabInstance:
@@ -26417,10 +26417,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f673d08ac037f66499cd04f7f55775ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clouds: {fileID: 1587502499233818021, guid: 594f6f7e73ccb15499ed627e43e48537, type: 3}
+  cloud1: {fileID: 1587502499233818021, guid: 594f6f7e73ccb15499ed627e43e48537, type: 3}
+  cloud2: {fileID: 1570194808130343500, guid: d54d937933b178e4080327ffbc3dfaec, type: 3}
   xPos: 0
   yPos: 0
   zPos: 0
+  xPos2: 0
+  yPos2: 0
+  zPos2: 0
   cloudCount: 0
 --- !u!4 &1397368885
 Transform:
@@ -36948,7 +36952,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2053697164
 PrefabInstance:
@@ -37182,7 +37186,7 @@ RectTransform:
   m_Children:
   - {fileID: 1295231576}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
