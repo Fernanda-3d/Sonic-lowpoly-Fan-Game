@@ -11,6 +11,8 @@ TagManager:
   - chopper
   - finishSound
   - sonichead
+  - water
+  - land_collider
   layers:
   - Default
   - TransparentFX

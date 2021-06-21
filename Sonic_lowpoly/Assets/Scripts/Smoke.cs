@@ -8,6 +8,7 @@ public class Smoke : MonoBehaviour
     //public ParticleSystem smoke;
     // public GameObject here;
     public GameObject enemy;
+    public GameObject kill;
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,6 +20,7 @@ public class Smoke : MonoBehaviour
             // smoke.Play();
             Destroy(gameObject);
             Destroy(enemy);
+            Destroy(kill);
         }
            
     }

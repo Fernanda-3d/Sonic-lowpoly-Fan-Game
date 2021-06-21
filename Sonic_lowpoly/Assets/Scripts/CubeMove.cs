@@ -6,8 +6,7 @@ public class CubeMove : MonoBehaviour
 {
     public float moveSpeed = 0f;
     
-
-    // Use this for initialization
+     // Use this for initialization
     void Start()
     {
         
@@ -18,9 +17,18 @@ public class CubeMove : MonoBehaviour
     {
         //Moves Forward and back along z axis                           //Up/Down
         transform.Translate(-Vector3.forward * Time.deltaTime * Input.GetAxis("Vertical") * moveSpeed);
+
         //Moves Left and right along x Axis                               //Left/Right
        transform.Translate(-Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal") * moveSpeed);
+
+       
+
+       
     }
+
+
+
+
 
 
 }

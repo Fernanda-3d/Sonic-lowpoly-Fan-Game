@@ -24,7 +24,12 @@ public class SonicController : MonoBehaviour
     public AudioSource loseSound;
     public AudioClip losering;
     public ParticleSystem ringEffect;
-
+    public AudioSource splashSound;
+    public AudioClip splash;
+    public ParticleSystem splashEffect;
+    public AudioSource testplay;
+    public GameObject runeffect;
+    
 
 
     // public float rotation_Speed = 0.15f;
@@ -43,7 +48,47 @@ public class SonicController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         //verticalInput = Input.GetAxis("Vertical");
+
+        /* [SerializeField] private Animator sheepAnim;
+
+         //Set a bool stored in the animation to a new value
+         sheepAnim.SetBool("isIdle", true);
+
+         //Another way to set the animation playback speed
+         sheep.GetComponent<Animator>().speed = 2.5f; */
+
+        if (-_rigidbody.velocity.x > 0.5)
+        {
+            runeffect.GetComponent<SmokeFollow>().enabled = true;
+            runeffect.GetComponent<CameraFollow>().enabled = false;
+        }
         
+                
+        if (-_rigidbody.velocity.x < 0.5) 
+        {
+            runeffect.GetComponent<SmokeFollow>().enabled = false;
+            runeffect.GetComponent<CameraFollow>().enabled = true;
+        } 
+
+        
+       
+        /* if (_rigidbody.velocity.x > 0.5)
+         {
+             runeffect.GetComponent<SmokeFollow>().enabled = true;
+             runeffect.GetComponent<CameraFollow>().enabled = false;
+         }
+         if (_rigidbody.velocity.x < 0.5)
+         {
+             runeffect.GetComponent<SmokeFollow>().enabled = false;
+             runeffect.GetComponent<CameraFollow>().enabled = true;
+         } */
+
+        if (isGrounded == false)
+        {
+            runeffect.GetComponent<SmokeFollow>().enabled = false;
+            runeffect.GetComponent<CameraFollow>().enabled = true;
+        }
+
        
 
         //Face Forward
@@ -57,6 +102,7 @@ public class SonicController : MonoBehaviour
 
         // Move Animation
         _animator.SetFloat("Speed", horizontalInput);
+
         //_animator.SetFloat("SpeedVertical", verticalInput);
 
 
@@ -68,7 +114,8 @@ public class SonicController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
         {
             jump = true;
-           // _rigidbody.velocity = Vector3.zero;
+            
+            // _rigidbody.velocity = Vector3.zero;
             jumpSound.Play();
 
         }
@@ -88,7 +135,8 @@ public class SonicController : MonoBehaviour
     {
         //Move        
         _rigidbody.velocity = new Vector3(-horizontalInput * speedMultiplier, _rigidbody.velocity.y, 0 * Time.deltaTime);
-        
+
+     
 
         //IsGrounded
 
@@ -99,6 +147,7 @@ public class SonicController : MonoBehaviour
         if (jump && isGrounded)
         {
             jump = false;
+            
             _rigidbody.AddForce(0, forceConst, 0, ForceMode.Impulse);
         }
 
@@ -123,8 +172,9 @@ public class SonicController : MonoBehaviour
             smoke.Play();
             hit.PlayOneShot(hitSound); 
          
-        } 
+        }
 
+       
         if (other.gameObject.tag == "kill_trigger")
         {
 
@@ -132,6 +182,22 @@ public class SonicController : MonoBehaviour
             loseSound.PlayOneShot(losering);
             ringEffect.Play();
             ScoringSystem.theScore = 0;
+
+        }
+
+       /* if (other.gameObject.tag == "land_collider")
+        {
+            runeffect.GetComponent<SmokeFollow>().enabled = true;
+            runeffect.GetComponent<CameraFollow>().enabled = false;
+         } */
+
+        if (other.gameObject.tag == "water")
+        {
+
+            splashSound.PlayOneShot(splash);
+            splashEffect.Play();
+            _animator.SetBool("JumpFall", true);
+
 
         }
 
@@ -163,8 +229,14 @@ public class SonicController : MonoBehaviour
         if (other.gameObject.tag == "kill_trigger")
         {
             _animator.SetBool("JumpFall", false);
-
+            
         }
+
+       /* if (other.gameObject.tag == "land_collider")
+        {
+            runeffect.GetComponent<SmokeFollow>().enabled = false;
+            runeffect.GetComponent<CameraFollow>().enabled = true;
+        } */
 
     }
 }
