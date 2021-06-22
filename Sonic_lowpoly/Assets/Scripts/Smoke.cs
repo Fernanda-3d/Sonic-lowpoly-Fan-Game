@@ -9,6 +9,7 @@ public class Smoke : MonoBehaviour
     // public GameObject here;
     public GameObject enemy;
     public GameObject kill;
+    public GameObject die;
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,6 +22,7 @@ public class Smoke : MonoBehaviour
             Destroy(gameObject);
             Destroy(enemy);
             Destroy(kill);
+            Destroy(die);
         }
            
     }

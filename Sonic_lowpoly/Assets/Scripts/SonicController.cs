@@ -29,7 +29,11 @@ public class SonicController : MonoBehaviour
     public ParticleSystem splashEffect;
     public AudioSource testplay;
     public GameObject runeffect;
+    public static int theScore;
+    public GameObject kill;
+    public GameObject die;
     
+
 
 
     // public float rotation_Speed = 0.15f;
@@ -174,22 +178,32 @@ public class SonicController : MonoBehaviour
          
         }
 
-       
+        
         if (other.gameObject.tag == "kill_trigger")
-        {
-
-            Debug.Log("I'm killing the enemy");
+        {                    
             loseSound.PlayOneShot(losering);
             ringEffect.Play();
             ScoringSystem.theScore = 0;
+                      
+        }
+
+        if (other.gameObject.tag == "die" && theScore <= 0)
+        {
+            _animator.SetBool("Die", true);
+            Destroy(kill);
+            Destroy(die);
+           
 
         }
 
-       /* if (other.gameObject.tag == "land_collider")
-        {
-            runeffect.GetComponent<SmokeFollow>().enabled = true;
-            runeffect.GetComponent<CameraFollow>().enabled = false;
-         } */
+        
+
+
+        /* if (other.gameObject.tag == "land_collider")
+         {
+             runeffect.GetComponent<SmokeFollow>().enabled = true;
+             runeffect.GetComponent<CameraFollow>().enabled = false;
+          } */
 
         if (other.gameObject.tag == "water")
         {

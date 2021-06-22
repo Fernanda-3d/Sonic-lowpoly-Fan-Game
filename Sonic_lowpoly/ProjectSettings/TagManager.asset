@@ -13,6 +13,8 @@ TagManager:
   - sonichead
   - water
   - land_collider
+  - die
+  - fall_trigger
   layers:
   - Default
   - TransparentFX

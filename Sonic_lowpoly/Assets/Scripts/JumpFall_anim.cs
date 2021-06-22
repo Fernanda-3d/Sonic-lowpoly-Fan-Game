@@ -5,6 +5,7 @@ using UnityEngine;
 public class JumpFall_anim : MonoBehaviour
 {
 
+   
     [SerializeField] private Animator _animator;
     
     void OnTriggerEnter(Collider other)
@@ -18,4 +19,7 @@ public class JumpFall_anim : MonoBehaviour
 
 
     }
+
+
+   
 }
