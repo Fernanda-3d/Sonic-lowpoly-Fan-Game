@@ -192,7 +192,7 @@ public class SonicController : MonoBehaviour
             _animator.SetBool("Die", true);
             Destroy(kill);
             Destroy(die);
-           
+            GetComponent<UpDown>().enabled = true;
 
         }
 

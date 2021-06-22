@@ -14,8 +14,9 @@ public class UpDown : MonoBehaviour
     void Start()
     {
         posOffset = transform.position;
+       
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -25,5 +26,5 @@ public class UpDown : MonoBehaviour
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
 
         transform.position = tempPos;
-    }
+    }  
 }
