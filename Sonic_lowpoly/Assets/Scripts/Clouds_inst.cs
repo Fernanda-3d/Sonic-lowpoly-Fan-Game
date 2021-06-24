@@ -15,6 +15,8 @@ public class Clouds_inst : MonoBehaviour
     public int yPos2;
     public int zPos2;
 
+    
+
    // float minScale = 0.25f;
    // float maxScale = 1.5f;
 
@@ -27,12 +29,14 @@ public class Clouds_inst : MonoBehaviour
     {
 
         StartCoroutine(CloudDrop());
+        
     }
     IEnumerator CloudDrop()
     {
-      
+       
         while (cloudCount < 150)
         {
+            
             xPos = Random.Range(30, -260);
             yPos = Random.Range(10, 40);
             zPos = Random.Range(-125, -180);
@@ -59,6 +63,7 @@ public class Clouds_inst : MonoBehaviour
 
             yield return new WaitForSeconds(0.01f);
             cloudCount += 1;
+            
 
         }
 

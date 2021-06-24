@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 4b83a14f7905dd142bcf323e25475731
+  - enabled: 1
+    path: Assets/Demo/SonicScene_Backup.unity
+    guid: 7b6d788b44e715441b0f0cbe272cb410
   m_configObjects: {}

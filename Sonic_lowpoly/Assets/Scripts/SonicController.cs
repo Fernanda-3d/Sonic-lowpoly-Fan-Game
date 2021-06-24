@@ -8,11 +8,13 @@ public class SonicController : MonoBehaviour
     private float speedMultiplier = 8;
     //private float jumpForce = 8;
     private bool jump;
+    private bool death;
     //private bool roll;
     private bool isGrounded;
     private float horizontalInput;
     //private float verticalInput;
     public int forceConst = 10;
+    public int forceJump = 5;
     public AudioSource jumpSound;
     public ParticleSystem smoke;
     public AudioSource spring;
@@ -32,7 +34,8 @@ public class SonicController : MonoBehaviour
     public static int theScore;
     public GameObject kill;
     public GameObject die;
-    
+    public AudioSource dieSound;
+    public AudioClip dieClip;
 
 
 
@@ -124,13 +127,14 @@ public class SonicController : MonoBehaviour
 
         }
 
-              
        
-      /*  if (Input.GetButtonDown("Jump") && isGrounded)
-         {
-             jump = true;
-         } */
-        
+
+
+        /*  if (Input.GetButtonDown("Jump") && isGrounded)
+           {
+               jump = true;
+           } */
+
     }
 
     
@@ -151,11 +155,24 @@ public class SonicController : MonoBehaviour
         if (jump && isGrounded)
         {
             jump = false;
+
+            this.GetComponent<Rigidbody>().velocity = new Vector3(0, 10.0f, 0);
+            // _rigidbody.AddForce(0, forceConst, 0, ForceMode.Impulse);
             
-            _rigidbody.AddForce(0, forceConst, 0, ForceMode.Impulse);
         }
 
-        
+        //Death
+        if (death)
+        {
+            dieSound.PlayOneShot(dieClip);
+            death = false;
+            ringEffect.Stop();
+            this.GetComponent<Rigidbody>().velocity = new Vector3(0, 10.0f, 0);
+            this.GetComponent<BoxCollider>().enabled = false;
+            this.GetComponent<SphereCollider>().enabled = false;
+            // _rigidbody.AddForce(0, forceConst, 0, ForceMode.Impulse);
+
+        }
 
         /*
           if (jump && isGrounded)
@@ -190,9 +207,10 @@ public class SonicController : MonoBehaviour
         if (other.gameObject.tag == "die" && theScore <= 0)
         {
             _animator.SetBool("Die", true);
+            death = true;
             Destroy(kill);
             Destroy(die);
-            GetComponent<UpDown>().enabled = true;
+            //GetComponent<UpDown>().enabled = true;
 
         }
 
@@ -223,13 +241,16 @@ public class SonicController : MonoBehaviour
 
         if (other.gameObject.tag == "high_jump")
         {
+
             jump = false;
             spring.PlayOneShot(springSound);
-            _rigidbody.velocity = new Vector3 (0f,0f,0f);
-            _rigidbody.AddForce(0, forceConst * 2, 0, ForceMode.Impulse);           
+            this.GetComponent<Rigidbody>().velocity = new Vector3(0, 15.0f, 0);
+
+
+            //_rigidbody.AddForce(0, 8, 0, ForceMode.Impulse);
         }
 
-       
+        
         if (other.gameObject.tag == "kill_trigger")
         {
             _animator.SetBool("JumpFall", true);
