@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SonicController : MonoBehaviour
 {
@@ -22,7 +24,7 @@ public class SonicController : MonoBehaviour
     public AudioSource hit;
     public AudioClip hitSound;
     public AudioSource finishSound;
-    public AudioClip finish;
+    public AudioClip finishclip;
     public AudioSource loseSound;
     public AudioClip losering;
     public ParticleSystem ringEffect;
@@ -36,6 +38,7 @@ public class SonicController : MonoBehaviour
     public GameObject die;
     public AudioSource dieSound;
     public AudioClip dieClip;
+    public Vector3 startPos;
 
 
 
@@ -168,9 +171,11 @@ public class SonicController : MonoBehaviour
             death = false;
             ringEffect.Stop();
             this.GetComponent<Rigidbody>().velocity = new Vector3(0, 10.0f, 0);
-            this.GetComponent<BoxCollider>().enabled = false;
+            //this.GetComponent<BoxCollider>().enabled = false;
             this.GetComponent<SphereCollider>().enabled = false;
             // _rigidbody.AddForce(0, forceConst, 0, ForceMode.Impulse);
+            
+            
 
         }
 
@@ -185,6 +190,10 @@ public class SonicController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Respawn")
+        {
+            Respawn();
+        }
 
         if (other.gameObject.tag == "smokeplay")
         {
@@ -233,9 +242,9 @@ public class SonicController : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "finishSound")
+        if (other.gameObject.tag == "Finish")
         {
-           finishSound.PlayOneShot(finish);
+           finishSound.PlayOneShot(finishclip);
 
         }
 
@@ -257,6 +266,11 @@ public class SonicController : MonoBehaviour
            
         }
                         
+    }
+
+    private void Respawn()
+    {
+        SceneManager.LoadScene("SonicScene_Backup");
     }
 
     void OnTriggerExit(Collider other)
