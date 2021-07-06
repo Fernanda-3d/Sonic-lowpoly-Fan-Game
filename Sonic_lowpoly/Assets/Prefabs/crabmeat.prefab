@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 726991511999624928}
   - component: {fileID: 5267966772461443477}
   m_Layer: 0
-  m_Name: die (2)
+  m_Name: die_21
   m_TagString: die
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,8 +150,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907784511438017908}
   m_LocalRotation: {x: -0, y: -0, z: -4.3232053e-16, w: 1}
-  m_LocalPosition: {x: 2.51, y: 3.99, z: -0.73}
-  m_LocalScale: {x: 1.8749998, y: 3.3333328, z: 3.333333}
+  m_LocalPosition: {x: 3.49, y: 3.609999, z: -0.73}
+  m_LocalScale: {x: 1.2339185, y: 2.1936328, z: 2.193633}
   m_Children: []
   m_Father: {fileID: 7386792240634735268}
   m_RootOrder: 4
@@ -171,7 +171,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907784511438017908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 5192169224515834679}
   - component: {fileID: 8466449045066284280}
   m_Layer: 0
-  m_Name: kill (2)
+  m_Name: kill_21
   m_TagString: kill_trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,8 +657,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3946829702510709033}
   m_LocalRotation: {x: -0, y: -0, z: -4.3232053e-16, w: 1}
-  m_LocalPosition: {x: 4.2099657, y: 3.9900012, z: -0.789999}
-  m_LocalScale: {x: 1.8749998, y: 3.3333328, z: 3.333333}
+  m_LocalPosition: {x: 4.72, y: 3.61, z: -0.789999}
+  m_LocalScale: {x: 1.2339185, y: 2.1936328, z: 2.193633}
   m_Children: []
   m_Father: {fileID: 7386792240634735268}
   m_RootOrder: 3
@@ -678,7 +678,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3946829702510709033}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc11d8c6274a57429779b6cf14973e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoke: {fileID: 0}
+  smoke: {fileID: 6926541509412094629}
   test_die: {fileID: 1907784511438017908}
 --- !u!1 &4635261289819402013
 GameObject:
@@ -893,7 +893,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6926541509412094629}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -953,8 +953,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7910846298219442206}
-  kill: {fileID: 0}
-  die: {fileID: 0}
+  kill: {fileID: 3946829702510709033}
+  die: {fileID: 1907784511438017908}
 --- !u!1 &7137905348090407766
 GameObject:
   m_ObjectHideFlags: 0
